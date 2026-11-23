@@ -1,3 +1,4 @@
+var VOICE_ENABLED = false; // 음성 인식 일시 중지 (키보드 전용)
 (function () {
   "use strict";
 
@@ -247,6 +248,7 @@
 
   startBtn.addEventListener("click", function () {
     gateErr.textContent = "";
+    if (!VOICE_ENABLED) { gate.classList.add("gone"); return; }
     var Rec = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!Rec) {
       gateErr.textContent = "크롬(또는 크롬 계열)에서 열어 주세요. 키보드만으로도 넘길 수는 있습니다.";
