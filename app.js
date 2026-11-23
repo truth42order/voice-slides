@@ -1,4 +1,5 @@
 var VOICE_ENABLED = false; // 음성 인식 일시 중지 (키보드 전용)
+if (!VOICE_ENABLED) document.addEventListener("DOMContentLoaded", function(){ var st=document.getElementById("status"); if(st) st.style.display="none"; var b=document.getElementById("start-btn"); if(b) b.textContent="시작"; });
 (function () {
   "use strict";
 
